@@ -9,6 +9,10 @@ class UserProfile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     is_clinic_manager = models.BooleanField(default=False)
     is_dispatcher = models.BooleanField(default=False)
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    email = models.CharField(max_length=200) 
+    token = models.CharField(max_length=200)
 
 class ClinicManager(UserProfile):
     pass
